@@ -1,6 +1,5 @@
 import { serve } from "inngest/next"
 import { alternativeCreated } from "~/functions/alternative-created"
-import { analyzeTools } from "~/functions/cron.analyze-tools"
 import { fetchTools } from "~/functions/cron.fetch-tools"
 import { publishTools } from "~/functions/cron.publish-tools"
 import { toolExpedited } from "~/functions/tool-expedited"
@@ -15,7 +14,6 @@ export const { GET, POST, PUT } = serve({
   client: inngest,
   functions: [
     fetchTools,
-    analyzeTools,
     publishTools,
     toolScheduled,
     toolSubmitted,
