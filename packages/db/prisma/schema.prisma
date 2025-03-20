@@ -165,7 +165,13 @@ model Tool {
   discountAmount  String?
   firstCommitDate DateTime?
   lastCommitDate  DateTime?
-  pageviews       Int?                     @default(0)
+  
+  // New SimilarWeb fields
+  globalRank        Int?
+  categoryRank      Int?
+  monthlyVisits     BigInt?              @default(0) @db.BigInt
+  lastWebUpdate     DateTime?
+
   status          ToolStatus               @default(Draft)
   publishedAt     DateTime?
   createdAt       DateTime                 @default(now())

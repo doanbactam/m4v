@@ -1,0 +1,19 @@
+{
+  "name": "@openalternative/similarweb",
+  "version": "0.0.0",
+  "exports": {
+    ".": "./index.ts",
+    "./client": "./client.ts"
+  },
+  "scripts": {
+    "build": "echo \"No build step needed\" && exit 0"
+  },
+  "dependencies": {
+    "wretch": "^2.11.0",
+    "date-fns": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2"
+  }
+} 

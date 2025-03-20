@@ -29,5 +29,12 @@
     "apps/*",
     "packages/*"
   ],
-  "packageManager": "bun@1.2.2"
+  "packageManager": "bun@1.2.2",
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "@parcel/watcher",
+    "core-js",
+    "esbuild",
+    "sharp"
+  ]
 }

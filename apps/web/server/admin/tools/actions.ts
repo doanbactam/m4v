@@ -151,3 +151,151 @@ export const analyzeToolStack = adminProcedure
       data: { stacks: { set: stack.map(slug => ({ slug })) } },
     })
   })
+
+export const fetchGitHubData = adminProcedure
+  .createServerAction()
+  .input(z.object({ id: z.string() }))
+  .handler(async ({ input: { id } }) => {
+    const tool = await db.tool.findUniqueOrThrow({ where: { id } })
+    
+    if (!tool.repositoryUrl) {
+      throw new Error("Tool does not have a repository URL")
+    }
+
+    const { getToolRepositoryData } = await import('~/lib/repositories')
+    
+    const repoData = await getToolRepositoryData(tool.repositoryUrl).catch(error => {
+      console.error(`Failed to fetch repository data for ${tool.name}:`, error)
+      throw new Error("Failed to fetch GitHub data")
+    })
+    
+    const updatedTool = await db.tool.update({
+      where: { id: tool.id },
+      data: repoData || {}
+    })
+    
+    revalidateTag("tools")
+    revalidateTag(`tool-${tool.slug}`)
+    
+    return updatedTool
+  })
+
+// Cập nhật schema cho website data
+const websiteDataSchema = z.object({
+  monthlyVisits: z.number().int().optional(),
+  bounceRate: z.number().optional(),
+  averageVisitDuration: z.number().optional(),
+  pagesPerVisit: z.number().optional(),
+  globalRank: z.number().optional(),
+  categoryRank: z.number().optional(),
+  category: z.string().optional(),
+  avgVisitDuration: z.number().optional(),
+  webScore: z.number().optional(),
+  lastWebUpdate: z.string().optional(),
+}).strict()
+
+export const fetchSimilarWebData = adminProcedure
+  .createServerAction()
+  .input(z.object({ id: z.string() }))
+  .handler(async ({ input: { id } }) => {
+    const tool = await db.tool.findUniqueOrThrow({ where: { id } })
+    
+    if (!tool.websiteUrl) {
+      throw new Error("Tool does not have a website URL")
+    }
+
+    // Validate URL format
+    try {
+      new URL(tool.websiteUrl)
+    } catch {
+      throw new Error(`Invalid website URL: ${tool.websiteUrl}`)
+    }
+
+    const { getToolWebsiteData } = await import('~/lib/repositories')
+    
+    try {
+      const websiteData = await getToolWebsiteData(tool.websiteUrl)
+      
+      // Validate website data structure
+      const validatedData = websiteDataSchema.parse(websiteData)
+      
+      // Convert bigint to number before updating database
+      const dataToUpdate = {
+        ...validatedData,
+        monthlyVisits: validatedData.monthlyVisits ? Number(validatedData.monthlyVisits) : undefined,
+        lastWebUpdate: validatedData.lastWebUpdate ? new Date(validatedData.lastWebUpdate) : undefined
+      }
+      
+      const updatedTool = await db.tool.update({
+        where: { id: tool.id },
+        data: dataToUpdate
+      })
+      
+      // Revalidate all related tags
+      revalidateTag("tools")
+      revalidateTag(`tool-${tool.slug}`)
+      revalidateTag(`tool-stats-${tool.slug}`)
+      revalidateTag(`tool-analytics-${tool.slug}`)
+      
+      return updatedTool
+    } catch (error: unknown) {
+      console.error(`Failed to fetch/process SimilarWeb data for ${tool.name}:`, {
+        error,
+        tool: {
+          id: tool.id,
+          name: tool.name,
+          websiteUrl: tool.websiteUrl
+        }
+      })
+
+      if (error instanceof z.ZodError) {
+        throw new Error(`Invalid SimilarWeb data structure: ${error.message}`)
+      }
+
+      // Type guard cho error object
+      if (error instanceof Error) {
+        if (error.message.includes('rate limit')) {
+          throw new Error('SimilarWeb API rate limit exceeded. Please try again later.')
+        }
+
+        if (error.message.includes('network')) {
+          throw new Error('Network error while fetching SimilarWeb data. Please check your connection.')
+        }
+
+        throw new Error(`Failed to fetch SimilarWeb data: ${error.message}`)
+      }
+
+      throw new Error('Failed to fetch SimilarWeb data: Unknown error')
+    }
+  })
+
+export const fetchToolData = adminProcedure
+  .createServerAction()
+  .input(z.object({ id: z.string() }))
+  .handler(async ({ input: { id } }) => {
+    const tool = await db.tool.findUniqueOrThrow({ where: { id } })
+    
+    try {
+      // Gọi các actions riêng biệt và bắt lỗi riêng
+      if (tool.repositoryUrl) {
+        try {
+          await fetchGitHubData({ id })
+        } catch (error) {
+          console.error('GitHub fetch failed:', error)
+        }
+      }
+
+      if (tool.websiteUrl) {
+        try {
+          await fetchSimilarWebData({ id })
+        } catch (error) {
+          console.error('SimilarWeb fetch failed:', error)
+        }
+      }
+      
+      return tool
+    } catch (error) {
+      console.error('Failed to fetch tool data:', error)
+      throw new Error('Failed to fetch tool data')
+    }
+  })

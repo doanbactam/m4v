@@ -114,7 +114,7 @@ export const findTools = async ({ where, orderBy, ...args }: Prisma.ToolFindMany
 export const findToolsWithCategories = async ({ where, ...args }: Prisma.ToolFindManyArgs) => {
   "use cache"
 
-  cacheTag("tools")
+  cacheTag("tools", "v1")
   cacheLife("max")
 
   return db.tool.findMany({
@@ -127,7 +127,7 @@ export const findToolsWithCategories = async ({ where, ...args }: Prisma.ToolFin
 export const findToolSlugs = async ({ where, orderBy, ...args }: Prisma.ToolFindManyArgs) => {
   "use cache"
 
-  cacheTag("tools")
+  cacheTag("tools", "v1")
   cacheLife("max")
 
   return db.tool.findMany({
@@ -148,7 +148,7 @@ export const countUpcomingTools = async ({ where, ...args }: Prisma.ToolCountArg
 export const findTool = async ({ where, ...args }: Prisma.ToolFindFirstArgs = {}) => {
   "use cache"
 
-  cacheTag("tool", `tool-${where?.slug}`)
+  cacheTag("tool", `tool-${where?.slug}`, "v1")
   cacheLife("max")
 
   return db.tool.findFirst({

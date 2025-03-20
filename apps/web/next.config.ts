@@ -20,8 +20,8 @@ const nextConfig: NextConfig = {
   },
 
   images: {
-    loader: "custom",
-    loaderFile: "./lib/image-loader.ts",
+    loader: "default",
+    // loaderFile: "./lib/image-loader.ts",
     minimumCacheTTL: 31536000,
     deviceSizes: [640, 768, 1024],
     remotePatterns: [
@@ -70,11 +70,6 @@ const nextConfig: NextConfig = {
       {
         source: "/topics",
         destination: "/topics/letter/a",
-        permanent: true,
-      },
-      {
-        source: "/languages/:path*",
-        destination: "/stacks/:path*",
         permanent: true,
       },
       {

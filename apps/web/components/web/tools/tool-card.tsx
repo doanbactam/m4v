@@ -1,7 +1,7 @@
 import { formatNumber } from "@curiousleaf/utils"
 import { cx } from "cva"
 import { formatDistanceToNowStrict } from "date-fns"
-import { GitForkIcon, StarIcon, TimerIcon } from "lucide-react"
+import { GlobeIcon, TimerIcon, UsersIcon } from "lucide-react"
 import type { ComponentProps } from "react"
 import { Card, CardDescription, CardHeader } from "~/components/common/card"
 import { H4 } from "~/components/common/heading"
@@ -29,8 +29,8 @@ const ToolCard = ({ className, tool, isRelated, ...props }: ToolCardProps) => {
     tool.lastCommitDate && formatDistanceToNowStrict(tool.lastCommitDate, { addSuffix: true })
 
   const insights = [
-    { label: "Stars", value: formatNumber(tool.stars, "standard"), icon: <StarIcon /> },
-    { label: "Forks", value: formatNumber(tool.forks, "standard"), icon: <GitForkIcon /> },
+    { label: "Monthly visits", value: formatNumber(Number(tool.monthlyVisits), "standard"), icon: <UsersIcon /> },
+    { label: "Global rank", value: formatNumber(tool.globalRank || 0, "standard"), icon: <GlobeIcon /> },
     { label: "Last commit", value: lastCommitDate, icon: <TimerIcon /> },
   ]
 
@@ -67,7 +67,7 @@ const ToolCard = ({ className, tool, isRelated, ...props }: ToolCardProps) => {
                     <span className="sr-only">Open Source </span>Alternative to:
                   </span>
 
-                  {tool.alternatives.map(({ slug, name, faviconUrl }) => (
+                  {tool.alternatives.map(({ slug, name, faviconUrl }: { slug: string; name: string; faviconUrl: string }) => (
                     <Stack size="xs" key={slug}>
                       <Favicon src={faviconUrl} title={name} className="size-6 p-[3px]" />
                       <strong className="font-medium">{name}</strong>
@@ -97,8 +97,8 @@ const ToolCard = ({ className, tool, isRelated, ...props }: ToolCardProps) => {
 
 const ToolCardSkeleton = () => {
   const insights = [
-    { label: "Stars", value: <Skeleton className="h-4 w-16" />, icon: <StarIcon /> },
-    { label: "Forks", value: <Skeleton className="h-4 w-14" />, icon: <GitForkIcon /> },
+    { label: "Monthly visits", value: <Skeleton className="h-4 w-16" />, icon: <UsersIcon /> },
+    { label: "Global rank", value: <Skeleton className="h-4 w-14" />, icon: <GlobeIcon /> },
     { label: "Last commit", value: <Skeleton className="h-4 w-20" />, icon: <TimerIcon /> },
   ]
 

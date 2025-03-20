@@ -6,7 +6,7 @@ import EmailToolScheduled from "~/emails/tool-scheduled"
 import { sendEmails } from "~/lib/email"
 import { generateContentWithRelations } from "~/lib/generate-content"
 import { uploadFavicon, uploadScreenshot } from "~/lib/media"
-import { getToolRepositoryData } from "~/lib/repositories"
+import { getToolRepositoryData, getToolWebsiteData } from "~/lib/repositories"
 import { analyzeRepositoryStack } from "~/lib/stack-analysis"
 import { inngest } from "~/services/inngest"
 import { ensureFreeSubmissions } from "~/utils/functions"
@@ -42,6 +42,15 @@ export const toolScheduled = inngest.createFunction(
 
         if (!data) return
 
+        return await db.tool.update({
+          where: { id: tool.id },
+          data,
+        })
+      }),
+
+      step.run("fetch-website-data", async () => {
+        const data = await getToolWebsiteData(tool.websiteUrl)
+        if (!data) return
         return await db.tool.update({
           where: { id: tool.id },
           data,

@@ -9,8 +9,6 @@ import { Intro, IntroDescription, IntroTitle } from "~/components/web/ui/intro"
 import { metadataConfig } from "~/config/metadata"
 import type { CategoryOne } from "~/server/web/categories/payloads"
 import { findCategory } from "~/server/web/categories/queries"
-import type { StackOne } from "~/server/web/stacks/payloads"
-import { findStack } from "~/server/web/stacks/queries"
 
 type PageProps = {
   params: Promise<{ slug: string; stack: string }>
@@ -21,7 +19,6 @@ const getCategory = cache(async ({ params }: PageProps) => {
   const { slug: categorySlug, stack: stackSlug } = await params
   const [category, stack] = await Promise.all([
     findCategory({ where: { slug: categorySlug } }),
-    findStack({ where: { slug: stackSlug } }),
   ])
 
   if (!category || !stack) {
@@ -31,12 +28,12 @@ const getCategory = cache(async ({ params }: PageProps) => {
   return { category, stack }
 })
 
-const getMetadata = (category: CategoryOne, stack: StackOne): Metadata => {
+const getMetadata = (category: CategoryOne): Metadata => {
   const name = category.label || `${category.name} Tools`
 
   return {
-    title: `Open Source ${name} using ${stack.name}`,
-    description: `A curated collection of the best open source ${name} using ${stack.name}. Each listing includes a website screenshot along with a detailed review of its features.`,
+    title: `Open Source ${name} using NextJs`,
+    description: `A curated collection of the best open source ${name} using NextJs. Each listing includes a website screenshot along with a detailed review of its features.`,
   }
 }
 
@@ -45,7 +42,7 @@ export const generateMetadata = async (props: PageProps) => {
   const url = `/categories/${category.slug}/using/${stack.slug}`
 
   return {
-    ...getMetadata(category, stack),
+    ...getMetadata(category),
     alternates: { ...metadataConfig.alternates, canonical: url },
     openGraph: { ...metadataConfig.openGraph, url },
   }
@@ -53,7 +50,7 @@ export const generateMetadata = async (props: PageProps) => {
 
 export default async function CategoryPage(props: PageProps) {
   const { category, stack } = await getCategory(props)
-  const { title, description } = getMetadata(category, stack)
+  const { title, description } = getMetadata(category)
 
   return (
     <>
@@ -67,10 +64,6 @@ export default async function CategoryPage(props: PageProps) {
             href: `/categories/${category.slug}`,
             name: category.label || category.name,
           },
-          {
-            href: `/categories/${category.slug}/using/${stack.slug}`,
-            name: `Using ${stack.name}`,
-          },
         ]}
       />
 
@@ -80,7 +73,7 @@ export default async function CategoryPage(props: PageProps) {
       </Intro>
 
       <Suspense fallback={<ToolQuerySkeleton />}>
-        <CategoryToolListing category={category} stack={stack} searchParams={props.searchParams} />
+        <CategoryToolListing category={category}  searchParams={props.searchParams} />
       </Suspense>
     </>
   )

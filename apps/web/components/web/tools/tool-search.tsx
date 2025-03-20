@@ -29,13 +29,14 @@ export const ToolSearch = ({ placeholder }: ToolSearchProps) => {
 
   const sortOptions = [
     { value: "publishedAt.desc", label: "Latest" },
-    { value: "pageviews.desc", label: "Most Popular" },
+    { value: "monthlyVisits.desc", label: "Most Popular" },
     { value: "name.asc", label: "Name (A to Z)" },
     { value: "name.desc", label: "Name (Z to A)" },
-    { value: "stars.desc", label: "Most Stars" },
-    { value: "forks.desc", label: "Most Forks" },
-    { value: "lastCommitDate.desc", label: "Last Commit" },
+    // { value: "stars.desc", label: "Most Stars" },
+    // { value: "forks.desc", label: "Most Forks" },
+    // { value: "lastCommitDate.desc", label: "Last Commit" },
     { value: "firstCommitDate.desc", label: "Repository Age" },
+    { value: "globalRank.desc", label: "Global Rank" },
   ]
 
   return (

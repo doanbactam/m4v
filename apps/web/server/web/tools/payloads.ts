@@ -51,12 +51,14 @@ export const toolOnePayload = Prisma.validator<Prisma.ToolSelect>()({
   status: true,
   publishedAt: true,
   updatedAt: true,
+  globalRank: true,
+  monthlyVisits: true,
+  lastWebUpdate: true,
   license: true,
   owner: toolOwnerPayload,
   alternatives: toolAlternativesPayload,
   categories: toolCategoriesPayload,
   topics: toolTopicsPayload,
-  stacks: toolStackPayload,
 })
 
 export const toolManyPayload = Prisma.validator<Prisma.ToolSelect>()({
@@ -75,6 +77,8 @@ export const toolManyPayload = Prisma.validator<Prisma.ToolSelect>()({
   publishedAt: true,
   createdAt: true,
   updatedAt: true,
+  monthlyVisits: true,
+  globalRank: true,
   owner: toolOwnerPayload,
   alternatives: { ...toolAlternativesPayload, take: 1 },
 })
