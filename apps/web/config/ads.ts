@@ -1,4 +1,4 @@
-import type { AdType } from "@openalternative/db/client"
+import type { AdType } from "@m4v/db/client"
 import type { AdOne } from "~/server/web/ads/payloads"
 
 export type AdSpot = {
@@ -39,7 +39,7 @@ export const adsConfig = {
   testimonials: [
     {
       quote:
-        "OpenAlternative has been a solid traffic source for our website since we partnered up with them. Their homepage spot, in particular, delivered great results, giving us a noticeable **10–20% traffic boost**. Piotr has done an excellent job with OpenAlternative and it’s clear from the platform’s traffic, engagement, and audience quality. Highly recommended!",
+        "m4v has been a solid traffic source for our website since we partnered up with them. Their homepage spot, in particular, delivered great results, giving us a noticeable **10–20% traffic boost**. Piotr has done an excellent job with m4v and it’s clear from the platform’s traffic, engagement, and audience quality. Highly recommended!",
       author: {
         name: "Abdullah Atta",
         title: "Founder of Notesnook",
@@ -59,7 +59,7 @@ export const adsConfig = {
       name: "Efficient App",
       description:
         "Not all Open Source alternatives are equal — Narrow down the best, without the bullsh*t",
-      websiteUrl: "https://efficient.link/ea/openalternative",
+      websiteUrl: "https://efficient.link/ea/m4v",
     },
     {
       name: "ScreenshotOne",

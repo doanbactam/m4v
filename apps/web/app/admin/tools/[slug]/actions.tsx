@@ -1,6 +1,6 @@
 "use client"
 
-import type { Tool } from "@openalternative/db/client"
+import type { Tool } from "@m4v/db/client"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { ToolActions } from "~/app/admin/tools/_components/tool-actions"

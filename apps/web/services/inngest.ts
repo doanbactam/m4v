@@ -1,5 +1,5 @@
 import { Logtail } from "@logtail/node"
-import { db } from "@openalternative/db"
+import { db } from "@m4v/db"
 import { EventSchemas, Inngest, InngestMiddleware } from "inngest"
 import { env } from "~/env"
 
@@ -28,7 +28,7 @@ const prismaMiddleware = new InngestMiddleware({
 })
 
 export const inngest = new Inngest({
-  id: "openalternative",
+  id: "m4v",
   schemas,
   logger,
   middleware: [prismaMiddleware],

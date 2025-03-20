@@ -1,4 +1,4 @@
-import { ToolStatus } from "@openalternative/db/client"
+import { ToolStatus } from "@m4v/db/client"
 import Link from "next/link"
 import { Listing } from "~/components/web/listing"
 import { Grid } from "~/components/web/ui/grid"

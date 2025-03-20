@@ -1,6 +1,6 @@
 "use client"
 
-import type { User } from "@openalternative/db/client"
+import type { User } from "@m4v/db/client"
 import { EllipsisIcon } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { type ComponentProps, type Dispatch, type SetStateAction, useTransition } from "react"

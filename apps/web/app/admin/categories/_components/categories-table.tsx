@@ -1,6 +1,6 @@
 "use client"
 
-import type { Category } from "@openalternative/db/client"
+import type { Category } from "@m4v/db/client"
 import { PlusIcon } from "lucide-react"
 import { useQueryStates } from "nuqs"
 import { use } from "react"

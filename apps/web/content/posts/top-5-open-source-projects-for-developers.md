@@ -95,6 +95,6 @@ Project Link: [**Plausible**](/plausible)
 
 ---
 
-I hope you find these open-source projects helpful. If they don’t fit your needs or if you’re looking for more projects, you can explore [**OpenAlternative**](/). It includes a variety of open-source alternative tools to paid software.
+I hope you find these open-source projects helpful. If they don’t fit your needs or if you’re looking for more projects, you can explore [**m4v**](/). It includes a variety of open-source alternative tools to paid software.
 
 Thanks for reading!

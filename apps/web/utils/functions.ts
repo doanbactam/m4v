@@ -1,4 +1,4 @@
-import { db } from "@openalternative/db"
+import { db } from "@m4v/db"
 import type { createStepTools } from "inngest/components/InngestStepTools"
 import type { inngest } from "~/services/inngest"
 

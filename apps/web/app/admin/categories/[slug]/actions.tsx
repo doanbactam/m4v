@@ -1,6 +1,6 @@
 "use client"
 
-import type { Category } from "@openalternative/db/client"
+import type { Category } from "@m4v/db/client"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { CategoriesDeleteDialog } from "~/app/admin/categories/_components/categories-delete-dialog"

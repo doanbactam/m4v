@@ -1,7 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { ToolStatus } from "@openalternative/db/client"
+import { ToolStatus } from "@m4v/db/client"
 import { useRouter } from "next/navigation"
 import { posthog } from "posthog-js"
 import type { ComponentProps } from "react"

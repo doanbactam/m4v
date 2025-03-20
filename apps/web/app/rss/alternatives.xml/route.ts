@@ -1,6 +1,6 @@
 import { getUrlHostname } from "@curiousleaf/utils"
-import { db } from "@openalternative/db"
-import { ToolStatus } from "@openalternative/db/client"
+import { db } from "@m4v/db"
+import { ToolStatus } from "@m4v/db/client"
 import RSS from "rss"
 import { config } from "~/config"
 import { addSearchParams } from "~/utils/search-params"

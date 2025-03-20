@@ -1,4 +1,4 @@
-import type { User } from "@openalternative/db/client"
+import type { User } from "@m4v/db/client"
 import {
   createSearchParamsCache,
   parseAsInteger,

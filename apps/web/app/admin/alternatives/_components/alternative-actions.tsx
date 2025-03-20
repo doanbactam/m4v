@@ -1,6 +1,6 @@
 "use client"
 
-import type { Alternative } from "@openalternative/db/client"
+import type { Alternative } from "@m4v/db/client"
 import { EllipsisIcon } from "lucide-react"
 import type { ComponentProps, Dispatch, SetStateAction } from "react"
 import { toast } from "sonner"

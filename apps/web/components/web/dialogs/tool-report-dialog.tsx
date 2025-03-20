@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { ReportType } from "@openalternative/db/client"
+import { ReportType } from "@m4v/db/client"
 import { sentenceCase } from "change-case"
 import type { Dispatch, SetStateAction } from "react"
 import { useForm } from "react-hook-form"

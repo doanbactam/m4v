@@ -1,6 +1,6 @@
 "use server"
 
-import { db } from "@openalternative/db"
+import { db } from "@m4v/db"
 import { z } from "zod"
 import { adminProcedure } from "~/lib/safe-actions"
 

@@ -1,5 +1,5 @@
 import { useDebouncedState } from "@mantine/hooks"
-import type { Alternative, Category, Tool } from "@openalternative/db/client"
+import type { Alternative, Category, Tool } from "@m4v/db/client"
 import { LoaderIcon } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"

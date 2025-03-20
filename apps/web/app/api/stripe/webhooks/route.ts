@@ -1,5 +1,5 @@
-import { db } from "@openalternative/db"
-import { AdType } from "@openalternative/db/client"
+import { db } from "@m4v/db"
+import { AdType } from "@m4v/db/client"
 import { revalidateTag } from "next/cache"
 import type Stripe from "stripe"
 import { z } from "zod"

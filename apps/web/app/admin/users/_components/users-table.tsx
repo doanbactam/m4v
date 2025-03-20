@@ -1,6 +1,6 @@
 "use client"
 
-import type { User } from "@openalternative/db/client"
+import type { User } from "@m4v/db/client"
 import { useQueryStates } from "nuqs"
 import { use, useMemo, useState } from "react"
 import { UsersDeleteDialog } from "~/app/admin/users/_components/users-delete-dialog"

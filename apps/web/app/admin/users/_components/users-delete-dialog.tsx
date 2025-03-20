@@ -1,6 +1,6 @@
 "use client"
 
-import type { User } from "@openalternative/db/client"
+import type { User } from "@m4v/db/client"
 import { TrashIcon } from "lucide-react"
 import type { ComponentProps } from "react"
 import { toast } from "sonner"

@@ -1,6 +1,6 @@
 "use client"
 
-import type { Tool } from "@openalternative/db/client"
+import type { Tool } from "@m4v/db/client"
 import type { Table } from "@tanstack/react-table"
 import { ToolsDeleteDialog } from "./tools-delete-dialog"
 

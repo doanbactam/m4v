@@ -1,4 +1,4 @@
-import { db } from "@openalternative/db"
+import { db } from "@m4v/db"
 import { eachDayOfInterval, format, isSameDay, startOfDay, subDays } from "date-fns"
 import { unstable_cacheLife as cacheLife, unstable_cacheTag as cacheTag } from "next/cache"
 import type { ComponentProps } from "react"

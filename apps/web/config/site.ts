@@ -1,7 +1,7 @@
 import { env } from "~/env"
 
 export const siteConfig = {
-  name: "OpenAlternative",
+  name: "m4v",
   tagline: "Open Source Alternatives to Popular Software",
   description:
     "A curated collection of the best open source alternatives to everyday SaaS products. Save money with reliable tools hand-picked for you.",
@@ -10,5 +10,5 @@ export const siteConfig = {
 
   alphabet: "abcdefghijklmnopqrstuvwxyz",
 
-  affiliateUrl: "https://go.openalternative.co",
+  affiliateUrl: "https://go.m4v.co",
 }

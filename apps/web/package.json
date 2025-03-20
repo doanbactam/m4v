@@ -1,5 +1,5 @@
 {
-  "name": "@openalternative/web",
+  "name": "@m4v/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -26,9 +26,9 @@
     "@mantine/hooks": "^7.17.2",
     "@mendable/firecrawl-js": "1.18.2",
     "@number-flow/react": "^0.5.7",
-    "@openalternative/db": "workspace:*",
-    "@openalternative/github": "workspace:*",
-    "@openalternative/similarweb": "workspace:*",
+    "@m4v/db": "workspace:*",
+    "@m4v/github": "workspace:*",
+    "@m4v/similarweb": "workspace:*",
     "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-email/components": "0.0.28",

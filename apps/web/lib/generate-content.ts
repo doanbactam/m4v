@@ -1,6 +1,6 @@
 import { createAnthropic } from "@ai-sdk/anthropic"
 import { isTruthy } from "@curiousleaf/utils"
-import { db } from "@openalternative/db"
+import { db } from "@m4v/db"
 import { generateObject } from "ai"
 import { z } from "zod"
 import { env } from "~/env"
@@ -12,9 +12,9 @@ import { tryCatch } from "~/utils/helpers"
  * The system prompt for the content generator.
  */
 const systemPrompt = `
-  You are an expert content creator specializing in open source products.
-  Your task is to generate high-quality, engaging content to display on a directory website.
-  You do not use any catchphrases like "Empower", "Streamline" etc.
+  Bạn là một chuyên gia người Việt Nam sáng tạo nội dung chuyên về các công cụ AI mới nhất. 
+  Nhiệm vụ của bạn là tạo ra nội dung chất lượng cao, hấp dẫn để hiển thị trên một trang web thư mục. 
+  Bạn không sử dụng bất kỳ cụm từ sáo rỗng nào như "Trao quyền", "Tinh gọn", v.v.
 `
 
 /**
@@ -24,17 +24,17 @@ const contentSchema = z.object({
   tagline: z
     .string()
     .describe(
-      "A tagline (up to 60 characters) that captures the essence of the tool. Should not include the tool name.",
+      "Tạo một câu tagline (tối đa 60 ký tự) bao quát lợi ích cốt lõi và các tính năng độc đáo của công cụ mà không sử dụng tên của nó. Tập trung vào sự ngắn gọn và ấn tượng để đảm bảo phù hợp với đối tượng mục tiêu.",
     ),
   description: z
     .string()
     .describe(
-      "A concise description (up to 160 characters) that highlights the main features and benefits. Should not include the tool name.",
+      "Mô tả ngắn gọn sản phẩm Yêu cầu: Tối đa 160 ký tự Nổi bật các tính năng chính Nêu rõ lợi ích cho người dùng Không bao gồm tên của công cụ",
     ),
   content: z
     .string()
     .describe(
-      "A detailed and engaging longer description with key benefits (up to 1000 characters). Can be Markdown formatted, but should start with paragraph and not use headings. Highlight important points with bold text. Make sure the lists use correct Markdown syntax.",
+      "Mô tả chi tiết và hấp dẫn về sản phẩm hoặc dịch vụ, tối đa 1000 ký tự. Đoạn văn đầu tiên nên giới thiệu tổng quan về sản phẩm hoặc dịch vụ, nêu bật các điểm mạnh và các lợi ích chính mà khách hàng có thể nhận được. Các lợi ích nên được làm nổi bật bằng chữ in đậm. Sử dụng cú pháp Markdown chính xác cho danh sách các tính năng hoặc lợi ích cụ thể, đảm bảo tính rõ ràng và dễ hiểu cho người đọc. Hãy chắc chắn rằng nội dung mạch lạc và logic, hướng đến việc khuyến khích khách hàng tìm hiểu thêm hoặc thực hiện hành động.",
     ),
 })
 
@@ -105,17 +105,21 @@ export const generateContentWithRelations = async (url: string) => {
       .array(z.string())
       .transform(a => a.map(name => categories.find(cat => cat.name === name)).filter(isTruthy))
       .describe(`
-        Assign the open source software product to the categories that it belongs to.
-        Try to assign the tool to multiple categories, but not more than 3.
-        If a tool does not belong to any category, return an empty array.
+       Gán sản phẩm phần mềm AI vào các danh mục mà nó thuộc về.
+
+Cố gắng gán công cụ vào nhiều danh mục, nhưng không quá 3.
+
+Nếu một công cụ không thuộc bất kỳ danh mục nào, trả về một mảng rỗng.
       `),
     alternatives: z
       .array(z.string())
       .transform(a => a.map(name => alternatives.find(alt => alt.name === name)).filter(isTruthy))
       .describe(`
-        Assign the open source software product to the proprietary software products that it is similar to.
-        Try to assign the tool to multiple alternatives.
-        If a tool does not have an alternative, return an empty array.
+Gán sản phẩm phần mềm AI vào các sản phẩm phần mềm độc quyền mà nó tương tự.
+
+Cố gắng gán công cụ vào nhiều lựa chọn thay thế.
+
+Nếu một công cụ không có lựa chọn thay thế, trả về một mảng rỗng.
       `),
   })
 

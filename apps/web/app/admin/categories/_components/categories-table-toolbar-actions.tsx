@@ -1,6 +1,6 @@
 "use client"
 
-import type { Category } from "@openalternative/db/client"
+import type { Category } from "@m4v/db/client"
 import type { Table } from "@tanstack/react-table"
 import { CategoriesDeleteDialog } from "./categories-delete-dialog"
 

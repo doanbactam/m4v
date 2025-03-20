@@ -1,4 +1,4 @@
-import { ToolStatus } from "@openalternative/db/client"
+import { ToolStatus } from "@m4v/db/client"
 import { NonRetriableError } from "inngest"
 import { revalidateTag } from "next/cache"
 import { config } from "~/config"

@@ -1,6 +1,6 @@
 "use server"
 
-import { AdType } from "@openalternative/db/client"
+import { AdType } from "@m4v/db/client"
 import { z } from "zod"
 import { createServerAction } from "zsa"
 import { env } from "~/env"

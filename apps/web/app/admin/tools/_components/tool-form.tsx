@@ -1,7 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { ToolStatus } from "@openalternative/db/client"
+import { ToolStatus } from "@m4v/db/client"
 import { formatDate } from "date-fns"
 import { EyeIcon, PencilIcon } from "lucide-react"
 import { redirect } from "next/navigation"

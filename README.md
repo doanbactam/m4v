@@ -1,37 +1,37 @@
-![OpenAlternative](https://openalternative.co/opengraph.png)
+![m4v](https://m4v.co/opengraph.png)
 
 <p align="center"></p>
 
 <p align="center">
   Discover open source alternatives to popular software.
   <br>
-  <a href="https://openalternative.co"><strong>Learn more »</strong></a>
+  <a href="https://m4v.co"><strong>Learn more »</strong></a>
   <br />
   <br />
-  <a href="https://openalternative.co">Website</a>
+  <a href="https://m4v.co">Website</a>
   ·
-  <a href="https://github.com/piotrkulpinski/openalternative/issues">Issues</a>
+  <a href="https://github.com/piotrkulpinski/m4v/issues">Issues</a>
 </p>
 
 <p align="center">
-   <a href="https://github.com/piotrkulpinski/openalternative/stargazers"><img src="https://img.shields.io/github/stars/piotrkulpinski/openalternative" alt="Github Stars"></a>
+   <a href="https://github.com/piotrkulpinski/m4v/stargazers"><img src="https://img.shields.io/github/stars/piotrkulpinski/m4v" alt="Github Stars"></a>
    <a href="https://uptime.betterstack.com/?utm_source=status_badge"><img src="https://uptime.betterstack.com/status-badges/v1/monitor/1lyos.svg" alt="Better Stack"></a>
-   <a href="https://github.com/piotrkulpinski/openalternative/blob/main/LICENSE"><img src="https://img.shields.io/github/license/piotrkulpinski/openalternative" alt="License"></a>
-   <a href="https://github.com/piotrkulpinski/openalternative/pulse"><img src="https://img.shields.io/github/commit-activity/m/piotrkulpinski/openalternative" alt="Commits-per-month"></a>
-   <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/piotrkulpinski/openalternative">
+   <a href="https://github.com/piotrkulpinski/m4v/blob/main/LICENSE"><img src="https://img.shields.io/github/license/piotrkulpinski/m4v" alt="License"></a>
+   <a href="https://github.com/piotrkulpinski/m4v/pulse"><img src="https://img.shields.io/github/commit-activity/m/piotrkulpinski/m4v" alt="Commits-per-month"></a>
+   <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/piotrkulpinski/m4v">
    <img alt="open in devcontainer" src="https://img.shields.io/static/v1?label=Dev%20Containers&message=Enabled&color=blue&logo=visualstudiocode" />
    </a>
    <a href="https://news.ycombinator.com/item?id=39639386"><img src="https://img.shields.io/badge/Hacker%20News-156-%23FF6600" alt="Hacker News"></a>
 </p>
 
 <p align="center">
-  <a href="https://www.producthunt.com/posts/openalternative?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-openalternative" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=443404&theme=light&period=daily" alt="OpenAlternative - Discover open source alternatives to popular software | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-  <a href="https://www.producthunt.com/posts/openalternative?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-openalternative" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=443404&theme=light" alt="OpenAlternative - Discover open source alternatives to popular software | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+  <a href="https://www.producthunt.com/posts/m4v?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-m4v" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=443404&theme=light&period=daily" alt="m4v - Discover open source alternatives to popular software | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+  <a href="https://www.producthunt.com/posts/m4v?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-m4v" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=443404&theme=light" alt="m4v - Discover open source alternatives to popular software | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </p>
 
 ## About this project
 
-OpenAlternative is a community driven list of **open source alternatives to proprietary software** and applications.
+m4v is a community driven list of **open source alternatives to proprietary software** and applications.
 
 Our goal is to be your first stop when researching for a new open source service to help you grow your business. We will help you **find alternatives** of the products you already use.
 
@@ -39,31 +39,31 @@ Join us in creating the biggest **directory of open source software**.
 
 ## Sponsors
 
-OpenAlternative is an GPL-3.0-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider [sponsoring OpenAlternative's development](https://openalternative.co/advertise).
+m4v is an GPL-3.0-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider [sponsoring m4v's development](https://m4v.co/advertise).
 
 <p align="center">
-  <a target="_blank" href="https://openalternative.co/advertise#advertisers">
-    <img alt="Sponsors" src="https://openalternative.co/advertisers/advertisers.webp">
+  <a target="_blank" href="https://m4v.co/advertise#advertisers">
+    <img alt="Sponsors" src="https://m4v.co/advertisers/advertisers.webp">
   </a>
 </p>
 
 ## Services
 
-OpenAlternative uses the following third-party services:
+m4v uses the following third-party services:
 
 - Database: [Neon](https://neon.tech)
 - Analytics: [Plausible](https://plausible.io), [PostHog](https://posthog.com)
-- Newsletter: [Beehiiv](https://go.openalternative.co/beehiiv)
+- Newsletter: [Beehiiv](https://go.m4v.co/beehiiv)
 - Background Jobs: [Inngest](https://inngest.com)
 - File Storage: [AWS S3](https://aws.amazon.com/s3)
 - Payments: [Stripe](https://stripe.com)
-- Screenshots: [ScreenshotOne](https://go.openalternative.co/screenshotone)
+- Screenshots: [ScreenshotOne](https://go.m4v.co/screenshotone)
 
 Make sure to set up accounts with these services and add the necessary environment variables to your `.env` file.
 
 ## Project Structure
 
-OpenAlternative is built as a Turborepo monorepo with multiple packages. The project structure is organized as follows:
+m4v is built as a Turborepo monorepo with multiple packages. The project structure is organized as follows:
 
 - `/apps` - Turborepo apps
   - `/app` - Main Next.js application using the App Router architecture
@@ -143,4 +143,4 @@ Ensure all environment variables are properly set in your production environment
 
 ## License
 
-OpenAlternative is licensed under the [GPL-3.0 License](LICENSE).
+m4v is licensed under the [GPL-3.0 License](LICENSE).

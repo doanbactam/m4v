@@ -1,7 +1,7 @@
 "use client"
 
 import { isTruthy } from "@curiousleaf/utils"
-import type { Tool } from "@openalternative/db/client"
+import type { Tool } from "@m4v/db/client"
 import { isFriday } from "date-fns"
 import { addDays, isWednesday } from "date-fns"
 import { isMonday } from "date-fns"

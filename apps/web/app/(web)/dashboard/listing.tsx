@@ -1,4 +1,4 @@
-import { ToolStatus } from "@openalternative/db/client"
+import { ToolStatus } from "@m4v/db/client"
 import { headers } from "next/headers"
 import { redirect } from "next/navigation"
 import { Suspense } from "react"

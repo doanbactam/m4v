@@ -1,4 +1,4 @@
-import { db } from "@openalternative/db"
+import { db } from "@m4v/db"
 import { Card, CardDescription, CardHeader } from "~/components/common/card"
 import { H2 } from "~/components/common/heading"
 

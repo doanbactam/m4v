@@ -1,6 +1,6 @@
 "use client"
 
-import type { User } from "@openalternative/db/client"
+import type { User } from "@m4v/db/client"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { UserActions } from "~/app/admin/users/_components/user-actions"

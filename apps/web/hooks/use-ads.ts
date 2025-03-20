@@ -1,6 +1,6 @@
 "use client"
 
-import type { AdType } from "@openalternative/db/client"
+import type { AdType } from "@m4v/db/client"
 import { useCallback, useMemo, useState } from "react"
 import type { DateRange } from "react-day-picker"
 import { config } from "~/config"

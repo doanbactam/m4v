@@ -1,4 +1,4 @@
-import { ToolStatus } from "@openalternative/db/client"
+import { ToolStatus } from "@m4v/db/client"
 import EmailSubmission from "~/emails/submission"
 import { sendEmails } from "~/lib/email"
 import { inngest } from "~/services/inngest"

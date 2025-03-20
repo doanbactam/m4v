@@ -1,7 +1,7 @@
 "use client"
 
 import { formatDate } from "@curiousleaf/utils"
-import { type Tool, ToolStatus } from "@openalternative/db/client"
+import { type Tool, ToolStatus } from "@m4v/db/client"
 import type { ColumnDef } from "@tanstack/react-table"
 import { differenceInDays, formatDistanceToNowStrict } from "date-fns"
 import {

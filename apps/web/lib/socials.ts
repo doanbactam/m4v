@@ -1,5 +1,5 @@
 import { formatNumber } from "@curiousleaf/utils"
-import type { Tool } from "@openalternative/db/client"
+import type { Tool } from "@m4v/db/client"
 import { formatDistanceToNowStrict } from "date-fns"
 import type { Jsonify } from "inngest/helpers/jsonify"
 import { config } from "~/config"

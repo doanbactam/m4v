@@ -1,6 +1,6 @@
 "use server"
 
-import { db } from "@openalternative/db"
+import { db } from "@m4v/db"
 import { z } from "zod"
 import { getIP, isRateLimited } from "~/lib/rate-limiter"
 import { userProcedure } from "~/lib/safe-actions"

@@ -1,7 +1,7 @@
 "use server"
 
-import { db } from "@openalternative/db"
-import { ToolStatus } from "@openalternative/db/client"
+import { db } from "@m4v/db"
+import { ToolStatus } from "@m4v/db/client"
 import { addDays, differenceInDays } from "date-fns"
 import { z } from "zod"
 import { config } from "~/config"

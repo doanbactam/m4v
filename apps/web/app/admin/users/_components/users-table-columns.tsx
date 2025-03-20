@@ -1,7 +1,7 @@
 "use client"
 
 import { formatDate } from "@curiousleaf/utils"
-import type { User } from "@openalternative/db/client"
+import type { User } from "@m4v/db/client"
 import type { ColumnDef } from "@tanstack/react-table"
 import { BanIcon, ShieldIcon } from "lucide-react"
 import type { Dispatch, SetStateAction } from "react"

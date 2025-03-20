@@ -1,7 +1,7 @@
 "use client"
 
 import { formatDate } from "@curiousleaf/utils"
-import type { Tool } from "@openalternative/db/client"
+import type { Tool } from "@m4v/db/client"
 import type { ColumnDef } from "@tanstack/react-table"
 import type { Dispatch, SetStateAction } from "react"
 import { ToolActions } from "~/app/admin/tools/_components/tool-actions"

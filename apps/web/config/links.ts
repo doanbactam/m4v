@@ -4,12 +4,12 @@ export const linksConfig = {
   madeWith: "https://dirstarter.com",
   author: "https://kulpinski.pl",
   twitter: "https://x.com/ossalternative",
-  bluesky: "https://bsky.app/profile/openalternative.co",
-  mastodon: "https://mastodon.social/@openalternative",
-  linkedin: "https://linkedin.com/company/openalternative",
-  github: "https://github.com/piotrkulpinski/openalternative",
-  medium: "https://medium.com/openalternative",
-  analytics: "https://go.openalternative.co/analytics",
+  bluesky: "https://bsky.app/profile/m4v.co",
+  mastodon: "https://mastodon.social/@m4v",
+  linkedin: "https://linkedin.com/company/m4v",
+  github: "https://github.com/piotrkulpinski/m4v",
+  medium: "https://medium.com/m4v",
+  analytics: "https://go.m4v.co/analytics",
   feeds: [
     { title: "Open Source Tools", url: `${siteConfig.url}/rss/tools.xml` },
     { title: "Proprietary Alternatives", url: `${siteConfig.url}/rss/alternatives.xml` },
@@ -71,7 +71,7 @@ export const linksConfig = {
     },
     {
       name: "Product Hunt",
-      url: "https://www.producthunt.com/posts/openalternative",
+      url: "https://www.producthunt.com/posts/m4v",
       icon: "/producthunt.svg",
     },
     {

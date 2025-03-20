@@ -1,6 +1,6 @@
 "use server"
 
-import { db } from "@openalternative/db"
+import { db } from "@m4v/db"
 import { revalidatePath } from "next/cache"
 import { after } from "next/server"
 import { z } from "zod"

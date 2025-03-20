@@ -1,5 +1,5 @@
 import { formatNumber } from "@curiousleaf/utils"
-import type { Tool } from "@openalternative/db/client"
+import type { Tool } from "@m4v/db/client"
 import { Heading, Text } from "@react-email/components"
 import { differenceInDays, format } from "date-fns"
 import type { Jsonify } from "inngest/helpers/jsonify"

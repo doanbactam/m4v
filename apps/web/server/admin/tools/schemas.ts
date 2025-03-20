@@ -1,4 +1,4 @@
-import { type Tool, ToolStatus } from "@openalternative/db/client"
+import { type Tool, ToolStatus } from "@m4v/db/client"
 import {
   createSearchParamsCache,
   parseAsArrayOf,

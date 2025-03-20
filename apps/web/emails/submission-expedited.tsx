@@ -1,4 +1,4 @@
-import type { Tool } from "@openalternative/db/client"
+import type { Tool } from "@m4v/db/client"
 import { Text } from "@react-email/components"
 import type { Jsonify } from "inngest/helpers/jsonify"
 import { EmailFeatureNudge } from "~/emails/components/feature-nudge"

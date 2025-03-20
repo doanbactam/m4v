@@ -132,6 +132,6 @@ Project Link: [**Trench**](/trench)
 
 ## Conclusion
 
-I hope these open-source projects are useful to you. You can look into [OpenAlternative](/) if they don't meet your demands or if you're searching for other projects. It offers a wide range of free and open-source tools as substitutes for paid and expensive software out there.
+I hope these open-source projects are useful to you. You can look into [m4v](/) if they don't meet your demands or if you're searching for other projects. It offers a wide range of free and open-source tools as substitutes for paid and expensive software out there.
 
 Thanks for reading!

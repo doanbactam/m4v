@@ -1,8 +1,8 @@
 "use server"
 
 import { slugify } from "@curiousleaf/utils"
-import { db } from "@openalternative/db"
-import { ToolStatus } from "@openalternative/db/client"
+import { db } from "@m4v/db"
+import { ToolStatus } from "@m4v/db/client"
 import { revalidatePath, revalidateTag } from "next/cache"
 import { after } from "next/server"
 import { z } from "zod"

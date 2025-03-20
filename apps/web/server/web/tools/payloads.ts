@@ -1,4 +1,4 @@
-import { Prisma } from "@openalternative/db/client"
+import { Prisma } from "@m4v/db/client"
 import { alternativeManyPayload } from "~/server/web/alternatives/payloads"
 import { categoryManyPayload } from "~/server/web/categories/payloads"
 import { stackManyPayload } from "~/server/web/stacks/payloads"

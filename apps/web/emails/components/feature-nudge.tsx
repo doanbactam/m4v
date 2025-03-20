@@ -1,4 +1,4 @@
-import type { Tool } from "@openalternative/db/client"
+import type { Tool } from "@m4v/db/client"
 import { Hr, Link, Text } from "@react-email/components"
 import type { Jsonify } from "inngest/helpers/jsonify"
 import { config } from "~/config"

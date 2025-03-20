@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "openalternative",
+      "name": "m4v",
       "devDependencies": {
         "@biomejs/biome": "^1.9.4",
         "turbo": "^2.4.4",
@@ -10,7 +10,7 @@
       },
     },
     "apps/web": {
-      "name": "@openalternative/web",
+      "name": "@m4v/web",
       "version": "0.1.0",
       "dependencies": {
         "@ai-sdk/anthropic": "^1.1.17",
@@ -26,9 +26,9 @@
         "@mantine/hooks": "^7.17.2",
         "@mendable/firecrawl-js": "1.18.2",
         "@number-flow/react": "^0.5.7",
-        "@openalternative/db": "workspace:*",
-        "@openalternative/github": "workspace:*",
-        "@openalternative/similarweb": "workspace:*",
+        "@m4v/db": "workspace:*",
+        "@m4v/github": "workspace:*",
+        "@m4v/similarweb": "workspace:*",
         "@radix-ui/react-progress": "^1.0.3",
         "@radix-ui/react-tooltip": "^1.0.7",
         "@react-email/components": "0.0.28",
@@ -86,7 +86,7 @@
       },
     },
     "packages/db": {
-      "name": "@openalternative/db",
+      "name": "@m4v/db",
       "version": "0.0.0",
       "dependencies": {
         "@prisma/client": "^6.4.1",
@@ -98,7 +98,7 @@
       },
     },
     "packages/github": {
-      "name": "@openalternative/github",
+      "name": "@m4v/github",
       "version": "0.0.0",
       "dependencies": {
         "@octokit/graphql": "^8.2.1",
@@ -110,7 +110,7 @@
       },
     },
     "packages/similarweb": {
-      "name": "@openalternative/similarweb",
+      "name": "@m4v/similarweb",
       "version": "0.0.0",
       "dependencies": {
         "date-fns": "^4.1.0",
@@ -494,13 +494,13 @@
 
     "@one-ini/wasm": ["@one-ini/wasm@0.1.1", "", {}, "sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw=="],
 
-    "@openalternative/db": ["@openalternative/db@workspace:packages/db"],
+    "@m4v/db": ["@m4v/db@workspace:packages/db"],
 
-    "@openalternative/github": ["@openalternative/github@workspace:packages/github"],
+    "@m4v/github": ["@m4v/github@workspace:packages/github"],
 
-    "@openalternative/similarweb": ["@openalternative/similarweb@workspace:packages/similarweb"],
+    "@m4v/similarweb": ["@m4v/similarweb@workspace:packages/similarweb"],
 
-    "@openalternative/web": ["@openalternative/web@workspace:apps/web"],
+    "@m4v/web": ["@m4v/web@workspace:apps/web"],
 
     "@opentelemetry/api": ["@opentelemetry/api@1.9.0", "", {}, "sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg=="],
 

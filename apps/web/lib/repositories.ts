@@ -1,5 +1,5 @@
 import { slugify } from "@curiousleaf/utils"
-import type { Prisma } from "@openalternative/db/client"
+import type { Prisma } from "@m4v/db/client"
 import { similarWebClient } from "~/services/similarweb"
 import { githubClient } from "~/services/github"
 

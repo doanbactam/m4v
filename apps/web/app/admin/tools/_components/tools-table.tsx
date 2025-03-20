@@ -1,6 +1,6 @@
 "use client"
 
-import { type Tool, ToolStatus } from "@openalternative/db/client"
+import { type Tool, ToolStatus } from "@m4v/db/client"
 import { CircleDashedIcon, CircleDotDashedIcon, CircleIcon, PlusIcon } from "lucide-react"
 import { useQueryStates } from "nuqs"
 import { use, useMemo, useState } from "react"

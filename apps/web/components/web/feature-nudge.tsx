@@ -1,4 +1,4 @@
-import type { Tool } from "@openalternative/db/client"
+import type { Tool } from "@m4v/db/client"
 import type { ComponentProps } from "react"
 import { toast } from "sonner"
 import { Button } from "~/components/common/button"

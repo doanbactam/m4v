@@ -1,5 +1,5 @@
-import { ReportType } from "@openalternative/db/client"
-import { githubRegex } from "@openalternative/github"
+import { ReportType } from "@m4v/db/client"
+import { githubRegex } from "@m4v/github"
 import { createSearchParamsCache, parseAsArrayOf, parseAsInteger, parseAsString } from "nuqs/server"
 import { z } from "zod"
 import { config } from "~/config"

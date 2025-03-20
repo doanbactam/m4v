@@ -1,4 +1,4 @@
-import { Prisma } from "@openalternative/db/client"
+import { Prisma } from "@m4v/db/client"
 
 export const adOnePayload = Prisma.validator<Prisma.AdSelect>()({
   name: true,

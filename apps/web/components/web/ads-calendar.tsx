@@ -1,4 +1,4 @@
-import type { AdType } from "@openalternative/db/client"
+import type { AdType } from "@m4v/db/client"
 import { differenceInDays, endOfDay, startOfDay } from "date-fns"
 import { EyeIcon } from "lucide-react"
 import { type ComponentProps, useCallback, useMemo } from "react"

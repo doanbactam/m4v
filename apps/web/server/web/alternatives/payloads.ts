@@ -1,4 +1,4 @@
-import { Prisma, ToolStatus } from "@openalternative/db/client"
+import { Prisma, ToolStatus } from "@m4v/db/client"
 
 export const alternativeOnePayload = Prisma.validator<Prisma.AlternativeSelect>()({
   name: true,

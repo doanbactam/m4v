@@ -1,4 +1,4 @@
-import { Prisma, ToolStatus } from "@openalternative/db/client"
+import { Prisma, ToolStatus } from "@m4v/db/client"
 
 export const licenseOnePayload = Prisma.validator<Prisma.LicenseSelect>()({
   name: true,

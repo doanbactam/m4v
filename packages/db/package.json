@@ -1,5 +1,5 @@
 {
-  "name": "@openalternative/db",
+  "name": "@m4v/db",
   "version": "0.0.0",
   "exports": {
     ".": "./index.ts",

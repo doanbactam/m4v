@@ -30,12 +30,12 @@ export default async function VerifyPage({ searchParams }: PageProps) {
     {
       provider: "Gmail",
       icon: "/gmail.svg",
-      link: "https://mail.google.com/#search/openalternative%20login",
+      link: "https://mail.google.com/#search/m4v%20login",
     },
     {
       provider: "Superhuman",
       icon: "/superhuman.svg",
-      link: "superhuman://mail.superhuman.com/search/openalternative%20login",
+      link: "superhuman://mail.superhuman.com/search/m4v%20login",
     },
   ]
 

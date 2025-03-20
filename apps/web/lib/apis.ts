@@ -1,4 +1,4 @@
-import type { RepositoryData } from "@openalternative/github"
+import type { RepositoryData } from "@m4v/github"
 import type { AllowedKeys } from "@specfy/stack-analyser"
 import wretch from "wretch"
 import { env } from "~/env"

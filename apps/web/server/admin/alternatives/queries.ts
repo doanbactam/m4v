@@ -1,6 +1,6 @@
 import { isTruthy } from "@curiousleaf/utils"
-import { db } from "@openalternative/db"
-import type { Prisma } from "@openalternative/db/client"
+import { db } from "@m4v/db"
+import type { Prisma } from "@m4v/db/client"
 import { endOfDay, startOfDay } from "date-fns"
 import type { AlternativesTableSchema } from "./schemas"
 

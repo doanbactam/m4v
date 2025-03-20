@@ -1,5 +1,5 @@
-import { db } from "@openalternative/db"
-import { type Prisma, ToolStatus } from "@openalternative/db/client"
+import { db } from "@m4v/db"
+import { type Prisma, ToolStatus } from "@m4v/db/client"
 import { unstable_cacheLife as cacheLife, unstable_cacheTag as cacheTag } from "next/cache"
 import { topicManyPayload, topicOnePayload } from "~/server/web/topics/payloads"
 

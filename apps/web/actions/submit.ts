@@ -1,7 +1,7 @@
 "use server"
 
 import { getUrlHostname, slugify } from "@curiousleaf/utils"
-import { db } from "@openalternative/db"
+import { db } from "@m4v/db"
 import { headers } from "next/headers"
 import { createServerAction } from "zsa"
 import { subscribeToNewsletter } from "~/actions/subscribe"
