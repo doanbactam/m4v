@@ -10,7 +10,6 @@ import { isProd } from "~/env"
 import { generateContent } from "~/lib/generate-content"
 import { removeS3Directories, uploadFavicon, uploadScreenshot } from "~/lib/media"
 import { adminProcedure } from "~/lib/safe-actions"
-import { analyzeRepositoryStack } from "~/lib/stack-analysis"
 import { toolSchema } from "~/server/admin/tools/schemas"
 import { inngest } from "~/services/inngest"
 
@@ -136,21 +135,6 @@ export const regenerateToolContent = adminProcedure
     return true
   })
 
-export const analyzeToolStack = adminProcedure
-  .createServerAction()
-  .input(z.object({ id: z.string() }))
-  .handler(async ({ input: { id } }) => {
-    const tool = await db.tool.findUniqueOrThrow({ where: { id } })
-
-    // Get analysis and cache it
-    const { stack } = await analyzeRepositoryStack(tool.repositoryUrl)
-
-    // Update tool with new stack
-    return await db.tool.update({
-      where: { id: tool.id },
-      data: { stacks: { set: stack.map(slug => ({ slug })) } },
-    })
-  })
 
 export const fetchGitHubData = adminProcedure
   .createServerAction()
