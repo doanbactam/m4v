@@ -34,7 +34,7 @@ export const env = createEnv({
     STRIPE_SECRET_KEY: z.string().min(1),
     STRIPE_WEBHOOK_SECRET: z.string().min(1),
     GITHUB_TOKEN: z.string().min(1),
-    RAPIDAPI_KEY: z.string().min(1),
+    RAPIDAPI_KEY: z.string().min(1).optional(),
     SCREENSHOTONE_ACCESS_KEY: z.string().min(1),
     PLAUSIBLE_API_KEY: z.string().min(1),
     BEEHIIV_API_KEY: z.string().min(1),
