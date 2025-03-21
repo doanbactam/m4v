@@ -1,5 +1,5 @@
 import { formatNumber } from "@curiousleaf/utils"
-import { StarIcon } from "lucide-react"
+import { EyeIcon } from "lucide-react"
 import type { ComponentProps } from "react"
 import { Card } from "~/components/common/card"
 import { H5, H6 } from "~/components/common/heading"
@@ -32,8 +32,8 @@ export const FeaturedTools = async ({ ...props }: ComponentProps<typeof Card>) =
               </Stack>
 
               <Stack size="xs">
-                <span className="text-xs">{formatNumber(tool.stars)}</span>
-                <StarIcon className="size-3 opacity-50" />
+                <span className="text-xs">{formatNumber(Number(tool.monthlyVisits ?? 0))}</span>
+                <EyeIcon className="size-3 opacity-50" />
               </Stack>
             </Link>
           </Stack>

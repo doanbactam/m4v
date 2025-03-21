@@ -22,7 +22,7 @@ export const WebsiteDetails = ({ className, tool, ...props }: WebsiteDetailsProp
       {...props}
     >
       <Stack direction="column" className="gap-4">
-        <H5 as="strong">Details:</H5>
+        <H5 as="strong">Thông tin website:</H5>
 
         <div className="flex flex-col gap-2 text-sm">
           <div className="flex items-center gap-2">

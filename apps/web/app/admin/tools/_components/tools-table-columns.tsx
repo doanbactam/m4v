@@ -89,10 +89,10 @@ export const getColumns = ({ setRowAction }: GetColumnsProps): ColumnDef<Tool>[]
       size: 0,
     },
     {
-      accessorKey: "pageviews",
-      header: ({ column }) => <DataTableColumnHeader column={column} title="Pageviews" />,
+      accessorKey: "monthlyVisits",
+      header: ({ column }) => <DataTableColumnHeader column={column} title="Lượt truy cập tháng" />,
       cell: ({ row }) => (
-        <span className="text-muted-foreground">{row.getValue("pageviews")?.toLocaleString()}</span>
+        <span className="text-muted-foreground">{row.getValue("monthlyVisits")?.toLocaleString()}</span>
       ),
       size: 0,
     },

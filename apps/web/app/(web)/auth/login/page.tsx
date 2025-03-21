@@ -6,7 +6,7 @@ import { Intro, IntroDescription, IntroTitle } from "~/components/web/ui/intro"
 import { metadataConfig } from "~/config/metadata"
 
 export const metadata: Metadata = {
-  title: "Sign in",
+  title: "Đăng nhập",
   description: "Join the open source community and get access to the dashboard.",
   openGraph: { ...metadataConfig.openGraph, url: "/auth/login" },
   alternates: { ...metadataConfig.alternates, canonical: "/auth/login" },

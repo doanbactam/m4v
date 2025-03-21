@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 import { useServerAction } from "zsa-react"
-import { sendExpediteDealEmails, testSocialPosts } from "~/actions/misc"
+import { fetchRepositoryData, testSocialPosts } from "~/actions/misc"
 import { searchItems } from "~/actions/search"
 import {
   CommandDialog,
@@ -33,6 +33,13 @@ export const CommandMenu = ({ isOpen, onOpenChange }: CommandMenuProps) => {
   const [query, setQuery] = useDebouncedState("", 100)
   const [searchResults, setSearchResults] = useState<SearchResult | null>(null)
 
+  const clearSearch = () => {
+    setTimeout(() => {
+      setSearchResults(null)
+      setQuery("")
+    }, 250)
+  }
+
   const { execute, isPending } = useServerAction(searchItems, {
     onSuccess: ({ data }) => {
       setSearchResults(data)
@@ -58,8 +65,6 @@ export const CommandMenu = ({ isOpen, onOpenChange }: CommandMenuProps) => {
 
   const handleOpenChange = (newOpen: boolean) => {
     onOpenChange(newOpen)
-
-    // Clear search results
     !newOpen && clearSearch()
   }
 
@@ -68,21 +73,14 @@ export const CommandMenu = ({ isOpen, onOpenChange }: CommandMenuProps) => {
     toast.success("Social post sent")
   }
 
-  const handleSendExpediteEmails = async () => {
-    await sendExpediteDealEmails()
-    toast.success("Expedite emails sent")
+  const handleFetchRepositoryData = async () => {
+    await fetchRepositoryData()
+    toast.success("Repository data fetched")
   }
 
   const handleSelect = (url: string) => {
     handleOpenChange(false)
     router.push(url)
-  }
-
-  const clearSearch = () => {
-    setTimeout(() => {
-      setSearchResults(null)
-      setQuery("")
-    }, 250)
   }
 
   return (
@@ -117,7 +115,7 @@ export const CommandMenu = ({ isOpen, onOpenChange }: CommandMenuProps) => {
 
         <CommandGroup heading="Quick Commands">
           <CommandItem onSelect={handleSendSocialPost}>Send Social Post</CommandItem>
-          <CommandItem onSelect={handleSendExpediteEmails}>Send Expedite Emails</CommandItem>
+          <CommandItem onSelect={handleFetchRepositoryData}>Fetch Repository Data</CommandItem>
         </CommandGroup>
 
         {!!searchResults?.tools.length && (
