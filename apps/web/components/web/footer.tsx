@@ -133,7 +133,6 @@ export const Footer = ({ children, className, hideNewsletter, ...props }: Footer
           <NavLink href="/categories">Thể loại</NavLink>
           <NavLink href="/self-hosted">Self-hosted</NavLink>
           <NavLink href="/topics">Topics</NavLink>
-          <NavLink href="/licenses">Licenses</NavLink>
         </Stack>
 
         <Stack direction="column" className="text-sm/normal md:col-span-3">

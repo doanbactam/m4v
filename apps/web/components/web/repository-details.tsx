@@ -44,14 +44,6 @@ export const RepositoryDetails = ({ className, tool, ...props }: RepositoryDetai
           icon: <HistoryIcon />,
         }
       : undefined,
-    tool.license
-      ? {
-          label: "License",
-          value: tool.license.name,
-          link: `/licenses/${tool.license.slug}`,
-          icon: <CopyrightIcon />,
-        }
-      : undefined,
     tool.isSelfHosted
       ? {
           label: "Self-hosted",

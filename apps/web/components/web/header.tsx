@@ -108,11 +108,6 @@ export const Header = ({ children, className, ...props }: ComponentProps<typeof 
                   <TagIcon className="shrink-0 size-4 opacity-75" /> Topics
                 </NavLink>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <NavLink href="/licenses">
-                  <CopyrightIcon className="shrink-0 size-4 opacity-75" /> Licenses
-                </NavLink>
-              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 

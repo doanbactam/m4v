@@ -16,7 +16,7 @@ export const searchTools = async (search: FilterSchema, where?: Prisma.ToolWhere
   cacheTag("tools")
   cacheLife("max")
 
-  const { q, page, sort, perPage, alternative, category, stack, license } = search
+  const { q, page, sort, perPage, alternative, category, stack } = search
   const start = performance.now()
   const skip = (page - 1) * perPage
   const take = perPage
@@ -27,7 +27,6 @@ export const searchTools = async (search: FilterSchema, where?: Prisma.ToolWhere
     ...(!!alternative.length && { alternatives: { some: { slug: { in: alternative } } } }),
     ...(!!category.length && { categories: { some: { slug: { in: category } } } }),
     ...(!!stack.length && { stacks: { some: { slug: { in: stack } } } }),
-    ...(!!license.length && { license: { slug: { in: license } } }),
   }
 
   // Use full-text search when query exists

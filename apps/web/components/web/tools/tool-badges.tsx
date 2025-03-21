@@ -1,11 +1,46 @@
 import { formatDate } from "@curiousleaf/utils"
 import { differenceInDays } from "date-fns"
-import { BellPlusIcon, ClockIcon, SparklesIcon, SquarePercentIcon } from "lucide-react"
 import type { ComponentProps } from "react"
 import { Stack } from "~/components/common/stack"
-import { Tooltip } from "~/components/common/tooltip"
-import type { ToolMany, ToolManyExtended, ToolOne } from "~/server/web/tools/payloads"
 import { cx } from "~/utils/cva"
+import type { ToolMany, ToolManyExtended, ToolOne } from "~/server/web/tools/payloads"
+
+type BadgeVariant = 
+  | "default" 
+  | "red" 
+  | "yellow" 
+  | "green" 
+  | "blue" 
+  | "indigo" 
+  | "purple" 
+  | "pink"
+
+type BadgeProps = {
+  variant?: BadgeVariant
+  children: React.ReactNode
+  className?: string
+}
+
+const Badge = ({ variant = "default", children, className }: BadgeProps) => {
+  const baseStyles = "px-2 py-0.5 text-xs font-medium rounded-full"
+  
+  const variantStyles: Record<BadgeVariant, string> = {
+    default: "bg-gray-100 text-gray-800",
+    red: "bg-red-100 text-red-800",
+    yellow: "bg-yellow-100 text-yellow-800", 
+    green: "bg-green-100 text-green-800",
+    blue: "bg-blue-100 text-blue-800",
+    indigo: "bg-indigo-100 text-indigo-800",
+    purple: "bg-purple-100 text-purple-800",
+    pink: "bg-pink-100 text-pink-800"
+  }
+
+  return (
+    <span className={cx(baseStyles, variantStyles[variant], className)}>
+      {children}
+    </span>
+  )
+}
 
 type ToolBadgesProps = ComponentProps<typeof Stack> & {
   tool: ToolOne | ToolMany | ToolManyExtended
@@ -25,37 +60,27 @@ export const ToolBadges = ({ tool, children, className, ...props }: ToolBadgesPr
     <Stack
       size="sm"
       wrap={false}
-      className={cx("justify-end text-sm empty:hidden", className)}
+      className={cx("gap-2 empty:hidden", className)}
       {...props}
     >
       {isNew && (
-        <Tooltip tooltip="Repo is less than 1 year old">
-          <SparklesIcon className="size-4 text-yellow-500" />
-        </Tooltip>
+        <Badge variant="yellow">New</Badge>
       )}
 
       {isFresh && (
-        <Tooltip tooltip="Published in the last 30 days">
-          <BellPlusIcon className="size-4 text-green-500" />
-        </Tooltip>
+        <Badge variant="green">Fresh</Badge>
       )}
 
       {isScheduled && (
-        <Tooltip tooltip={`Scheduled for ${formatDate(publishedAt)}`}>
-          <ClockIcon className="size-4 text-yellow-500" />
-        </Tooltip>
+        <Badge variant="blue">
+          {formatDate(publishedAt)}
+        </Badge>
       )}
 
       {discountAmount && (
-        <Tooltip
-          tooltip={
-            discountCode
-              ? `Use code ${discountCode} for ${discountAmount}!`
-              : `Get ${discountAmount} with our link!`
-          }
-        >
-          <SquarePercentIcon className="size-4 text-green-500" />
-        </Tooltip>
+        <Badge variant="red">
+          {discountCode ? `${discountCode} - ${discountAmount}` : discountAmount}
+        </Badge>
       )}
 
       {children}

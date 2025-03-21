@@ -12,7 +12,6 @@ export const filterParamsSchema = {
   alternative: parseAsArrayOf(parseAsString).withDefault([]),
   category: parseAsArrayOf(parseAsString).withDefault([]),
   stack: parseAsArrayOf(parseAsString).withDefault([]),
-  license: parseAsArrayOf(parseAsString).withDefault([]),
 }
 
 export const filterParamsCache = createSearchParamsCache(filterParamsSchema)

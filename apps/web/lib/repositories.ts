@@ -23,17 +23,6 @@ export const getToolRepositoryData = async (repository: string) => {
     firstCommitDate: repo.createdAt,
     lastCommitDate: repo.pushedAt,
     isSelfHosted: repo.topics.some(topic => selfHostedTopics.includes(topic)) ? true : undefined,
-
-    // License
-    license: repo.license
-      ? {
-          connectOrCreate: {
-            where: { name: repo.license },
-            create: { name: repo.license, slug: slugify(repo.license).replace(/-0$/, "") },
-          },
-        }
-      : undefined,
-
     // Topics
     topics: {
       connectOrCreate: repo.topics.map(slug => ({
@@ -60,12 +49,7 @@ export const getToolWebsiteData = async (websiteUrl: string) => {
   return {
     globalRank: website.globalRank,
     categoryRank: website.categoryRank,
-    category: website.category,
     monthlyVisits: website.monthlyVisits,
-    bounceRate: website.bounceRate,
-    pagesPerVisit: website.pagesPerVisit,
-    avgVisitDuration: website.avgVisitDuration,
-    webScore: website.score,
-    lastWebUpdate: website.lastUpdated,
+
   } as unknown as Prisma.ToolUpdateInput;
 }

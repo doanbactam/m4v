@@ -54,7 +54,6 @@ export const toolOnePayload = Prisma.validator<Prisma.ToolSelect>()({
   globalRank: true,
   monthlyVisits: true,
   lastWebUpdate: true,
-  license: true,
   owner: toolOwnerPayload,
   alternatives: toolAlternativesPayload,
   categories: toolCategoriesPayload,

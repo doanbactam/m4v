@@ -81,12 +81,6 @@ export const GitHubRepositoryCard = ({ className, tool, ...props }: GitHubReposi
           </Stack>
 
           <Stack direction="row" wrap={true} className="gap-x-4 gap-y-2">
-            {tool.license && (
-              <Stack size="xs" direction="row" className="items-center text-xs text-[#57606a] dark:text-[#8b949e]">
-                <BookIcon className="h-4 w-4" />
-                <span>{tool.license.name}</span>
-              </Stack>
-            )}
 
             <Stack size="xs" direction="row" className="items-center text-xs text-[#57606a] dark:text-[#8b949e]">
               <StarIcon className="h-4 w-4 fill-[#57606a] dark:fill-[#8b949e]" />
